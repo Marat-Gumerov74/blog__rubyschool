@@ -8,6 +8,7 @@
   <p>
     <%= link_to  "Show article", article_path(article) %> |
     <%= link_to  "Edit article", edit_article_path(article) %>
+    <%= button_to "Destroy", article_path(article), method: :delete, data: { confirm: 'Действительно удалить?'} %>
   </p>
   <hr>
 <% end %>

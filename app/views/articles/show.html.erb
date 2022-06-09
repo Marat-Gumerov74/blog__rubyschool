@@ -3,6 +3,17 @@
 <p><%= @article.text %></p>
 
 <p>
+
+<h3>Комментарии:</h3>
+<%= 'Без комментариев' if @article.comments.empty? %>
+
+<% @article.comments.each do |comment| %>
+  <p><strong>Автор:</strong> <%= comment.author %></p>
+  <p><%= comment.body %></p>
+  <hr>
+<% end %>
+
+
 <%= form_for([@article, @article.comments.build]) do |f| %>
 
   <p>
